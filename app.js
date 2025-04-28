@@ -1,7 +1,14 @@
 require('dotenv').config()
-const express = require('express')
 
+const express = require('express')
 const app = express()
+
+const path = require('path')
+const createError = require('http-errors')
+
+// Database setup
+const db = require('./models')
+db.sequelize.sync({ force: false, alter: true })
 
 // Middleware
 app.use(express.json())
