@@ -12,7 +12,11 @@ Module.exports= (sequelize, Sequelize) => {
             timestamps: false,
         }
     )
-    // SET UP ASSOCIATION
+    
+    Continents.associate = function (models) {
+        Continents.belongsTo(models.Hemispheres, { foreignKey: { allowNull: false } })
+        Continents.hasMany(models.Countries, { foreignKey: { allowNull: false } })
+    }
     
     return Continents
 }

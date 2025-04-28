@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
-    const Hemisphere = sequelize.define(
-        'Hemisphere',
+    const Hemispheres = sequelize.define(
+        'Hemispheres',
         {
             southern: {
                 type: Sequelize.DataTypes.BOOLEAN,
@@ -17,7 +17,10 @@ module.exports = (sequelize, Sequelize) => {
             timestamps: false,
         }
     )
-    // SET UP ASSOCIATION
+    
+    Hemispheres.associate = function (models) {
+        Hemispheres.hasMany(models.Continents, { foreignKey: { allowNull: false } })
+    }
 
-    return Hemisphere
+    return Hemispheres
 }

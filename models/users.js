@@ -34,7 +34,5 @@ module.exports = (sequelize, Sequelize) => {
 
     )
 
-    // SET UP ASSOCIATIONS
-
     return User
 }

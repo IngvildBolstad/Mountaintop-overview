@@ -11,6 +11,11 @@ module.exports = (sequelize, Sequelize) => {
             timestamps: false,
         }
     )
+    
+    Countries.associate = function (models) {
+        Countries.belongTo(models.Continents, { foreignKey: { allowNull: false } })
+        Countries.hasMany(models.MountainRanges, { foreignKey: { allowNull: false } })
+    }
 
     return Countries
 }

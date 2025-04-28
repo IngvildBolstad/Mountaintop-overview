@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const basename = path.basename(__filename)
 
+// Setting up database
 const sequelize = new Sequelize(
     process.env.DB_HOST,
     process.env.DB_USER,

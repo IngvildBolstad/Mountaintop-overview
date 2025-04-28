@@ -18,6 +18,11 @@ app.get('/', (req, res) => {
     return res.status(200).json({ message: "You've hit the GET / endpoint!" })
 })
 
+// Importing routes
+
+
+// Adding routes to app
+
 
 // Setting up port
 const port = process.env.PORT || 3000
