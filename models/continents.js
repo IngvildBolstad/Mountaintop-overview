@@ -1,4 +1,4 @@
-Module.exports= (sequelize, Sequelize) => {
+module.exports= (sequelize, Sequelize) => {
     const Continents = sequelize.define(
         'Continents',
         {

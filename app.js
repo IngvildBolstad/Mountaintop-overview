@@ -5,9 +5,11 @@ const app = express()
 
 const path = require('path')
 const createError = require('http-errors')
+const bodyParser = require('body-parser')
 
 // Database setup
 const db = require('./models')
+
 db.sequelize.sync({ force: false, alter: true })
 
 // Middleware
@@ -30,3 +32,5 @@ const port = process.env.PORT || 3000
 app.listen(port, () => { // Anonymous arrow function
     console.log(`Server is listening on ${port}`)
 })
+
+module.exports = app

@@ -1,4 +1,4 @@
-module.exports = (Sequelize, Sequelize) => {
+module.exports = (sequelize, Sequelize) => {
     const MountainRanges = sequelize.define(
         'MountainRanges',
         {
@@ -13,7 +13,7 @@ module.exports = (Sequelize, Sequelize) => {
     )
     
     MountainRanges.associate = function (models) {
-        MountainRanges.belongsToMany(models.Countries, { foreignKey: { allowNull: false } })
+        MountainRanges.belongsToMany(models.Countries, { through: 'mountainRangeCountries' }, { foreignKey: { allowNull: false } })
         MountainRanges.hasMany(models.Mountains, { foreignKey: { allowNull: false } })
     }
 
